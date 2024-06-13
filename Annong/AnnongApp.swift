@@ -10,7 +10,6 @@ import SwiftData
 
 @main
 struct AnnongApp: App {
-    
     var modelContainer: ModelContainer = {
         let schema = Schema([User.self, Post.self])
         let modelConfiguration = ModelConfiguration(schema: schema,

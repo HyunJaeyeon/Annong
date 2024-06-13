@@ -12,6 +12,8 @@
 		BD562F422C1B0A3B0078738B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD562F412C1B0A3B0078738B /* Assets.xcassets */; };
 		BD562F452C1B0A3B0078738B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD562F442C1B0A3B0078738B /* Preview Assets.xcassets */; };
 		BD562F4C2C1B0A4F0078738B /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = BD562F4B2C1B0A4F0078738B /* .gitignore */; };
+		BD562F4E2C1B0CCD0078738B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD562F4D2C1B0CCD0078738B /* User.swift */; };
+		BD562F512C1B14410078738B /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD562F502C1B14410078738B /* Post.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +23,8 @@
 		BD562F412C1B0A3B0078738B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BD562F442C1B0A3B0078738B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		BD562F4B2C1B0A4F0078738B /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		BD562F4D2C1B0CCD0078738B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		BD562F502C1B14410078738B /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +58,7 @@
 		BD562F3C2C1B0A3A0078738B /* Annong */ = {
 			isa = PBXGroup;
 			children = (
+				BD562F4F2C1B0CD20078738B /* Model */,
 				BD562F3D2C1B0A3A0078738B /* AnnongApp.swift */,
 				BD562F3F2C1B0A3A0078738B /* ContentView.swift */,
 				BD562F412C1B0A3B0078738B /* Assets.xcassets */,
@@ -68,6 +73,15 @@
 				BD562F442C1B0A3B0078738B /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		BD562F4F2C1B0CD20078738B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BD562F4D2C1B0CCD0078738B /* User.swift */,
+				BD562F502C1B14410078738B /* Post.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -143,6 +157,8 @@
 			files = (
 				BD562F402C1B0A3A0078738B /* ContentView.swift in Sources */,
 				BD562F3E2C1B0A3A0078738B /* AnnongApp.swift in Sources */,
+				BD562F4E2C1B0CCD0078738B /* User.swift in Sources */,
+				BD562F512C1B14410078738B /* Post.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

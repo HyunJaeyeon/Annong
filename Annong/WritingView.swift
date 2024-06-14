@@ -72,6 +72,7 @@ struct WritingView: View {
                     .overlay(alignment: .topLeading) {
                         Text("내용을 입력해주세요")
                             .foregroundStyle(content.isEmpty ? .placeholder : .clear)
+                            .opacity(0.5)
                             .font(.body)
                     }
                     .padding()

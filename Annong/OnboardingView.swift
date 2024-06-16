@@ -12,17 +12,33 @@ struct OnboardingView: View {
     @State var nickname = ""
     
     var body: some View {
-        VStack(alignment: .leading){
-            Text("안농?\n닉네임을 입력해주세요")
-                .font(.title)
-                .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
-                .foregroundStyle(.white)
+        NavigationStack{
+            VStack(alignment: .leading){
+                Text("안농?\n닉네임을 입력해주세요")
+                    .font(.title)
+                    .fontWeight(.bold)
+                    .foregroundStyle(.white)
+                
+                TextField("이름을 입력해주세요", text: $nickname)
+                    .padding()
+                    .background(Color.secondary.opacity(0.15))
+                    .clipShape(Capsule())
+                    .frame(width: 361)
+            }
             
-            TextField("이름을 입력해주세요", text: $nickname)
-                .padding()
-                .background(Color.secondary.opacity(0.15))
-                .clipShape(Capsule())
-                .frame(width: 361)
+            NavigationLink {
+                MessageBoxView()
+                    .navigationBarHidden(true)
+            } label: {
+                Text("안농 시작하기")
+                    .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                    .foregroundStyle(.black)
+                    .padding()
+                    .padding(.horizontal, 8)
+            }
+            .background(.accent)
+            .clipShape(.capsule)
+            .padding(.top, 80)
         }
     }
 }

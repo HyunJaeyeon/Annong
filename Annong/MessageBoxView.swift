@@ -18,7 +18,9 @@ struct MessageBoxView: View {
             
             List {
                 ForEach(posts) { post in
-                    Text("\(post.title)")
+                    NavigationLink(destination: MessageView(post: post)) {
+                        Text(post.title)
+                    }
                 }
             }
         }

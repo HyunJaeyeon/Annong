@@ -25,7 +25,7 @@ struct AnnongApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            OnboardingView()
                 .modelContainer(modelContainer)
                 .preferredColorScheme(.dark)
         }

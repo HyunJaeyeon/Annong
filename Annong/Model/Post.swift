@@ -1,5 +1,6 @@
 import Foundation
 import SwiftData
+import SwiftUI
 
 @Model
 class Post{
@@ -7,11 +8,11 @@ class Post{
     @Attribute(.unique) var id = UUID()
     var title: String
     @Attribute(.externalStorage) var image: Data
-    var context: String
+    var content: String
     
-    init(title: String, image: Data, context: String) {
+    init(title: String, image: Data, content: String) {
         self.title = title
         self.image = image
-        self.context = context
+        self.content = content
     }
 }

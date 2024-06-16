@@ -3,14 +3,15 @@ import SwiftData
 
 struct MessageBoxView: View {
     
-    @State var isShownFullScreenCover = false
+    @Binding var myNickname: String
+    @State private var isShownFullScreenCover = false
     
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
-            Text("💎kanto00의 우편함")
+            Text("💎 \(myNickname)의 우편함")
                 .font(.title)
-                .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
-                .foregroundStyle(.accent)
+                .fontWeight(.bold)
+                .foregroundStyle(.white)
                 .padding(.leading)
             
             List {
@@ -18,24 +19,27 @@ struct MessageBoxView: View {
                 Text("나 조너선 아이브인데, 이 앱 이쁘다")
             }
         }
+        .padding(.top)
         
         Button(action: {
             self.isShownFullScreenCover.toggle()
         }, label: {
             Text("쪽지 작성하기")
-                .foregroundStyle(.accent)
+                .fontWeight(.bold)
+                .foregroundStyle(.black)
                 .padding()
                 .padding(.horizontal, 8)
-                .background(.accent.opacity(0.15))
         })
-        .clipShape(Capsule())
+        .background(.accent)
+        .clipShape(.capsule)
         .fullScreenCover(isPresented: $isShownFullScreenCover) {
             WritingView()
         }
+        .padding(.bottom)
     }
 }
 
 #Preview {
-    MessageBoxView()
+    MessageBoxView(myNickname: .constant("젠예"))
         .preferredColorScheme(.dark)
 }

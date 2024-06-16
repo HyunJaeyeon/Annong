@@ -27,11 +27,11 @@ struct OnboardingView: View {
             }
             
             NavigationLink {
-                MessageBoxView()
+                MessageBoxView(myNickname: $nickname)
                     .navigationBarHidden(true)
             } label: {
                 Text("안농 시작하기")
-                    .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                    .fontWeight(.bold)
                     .foregroundStyle(.black)
                     .padding()
                     .padding(.horizontal, 8)

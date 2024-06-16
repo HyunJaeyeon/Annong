@@ -33,7 +33,7 @@ struct MessageBoxView: View {
         .background(.accent)
         .clipShape(.capsule)
         .fullScreenCover(isPresented: $isShownFullScreenCover) {
-            WritingView()
+            WritingView(isShownFullScreenCover: $isShownFullScreenCover)
         }
         .padding(.bottom)
     }

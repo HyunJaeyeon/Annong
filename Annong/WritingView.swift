@@ -14,9 +14,11 @@ struct WritingView: View {
     @State var selectedImage: Image? = nil
     @State var isImagePickerPresented = false
     
+    @Binding var isShownFullScreenCover: Bool
+    
     var body: some View {
         
-        ZStack {
+        NavigationStack {
             VStack(alignment: .leading) {
                 // 제목 입력 부분
                 Text("제목")
@@ -86,7 +88,24 @@ struct WritingView: View {
                 Spacer()
             }
             .padding()
-        }.background(Color.background)
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button(action: {
+                        isShownFullScreenCover.toggle()
+                    }) {
+                        Text("취소")
+                    }
+                }
+                
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button(action: {
+                        // TODO: SwiftData에 저장
+                    }) {
+                        Text("완료")
+                    }
+                }
+            }
+        }
     }
 }
 
@@ -127,5 +146,6 @@ struct ImagePicker: UIViewControllerRepresentable {
 
 
 #Preview {
-    WritingView()
+    WritingView(isShownFullScreenCover: .constant(true))
+        .preferredColorScheme(.dark)
 }

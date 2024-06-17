@@ -30,4 +30,7 @@ struct AnnongApp: App {
                 .preferredColorScheme(.dark)
         }
     }
+    init(){
+           print(URL.applicationSupportDirectory.path(percentEncoded: false))
+       }
 }

@@ -120,7 +120,7 @@ struct WritingView: View {
             return
         }
         
-        let model = Post(title: title, image: image, content: content)
+        let model = Post(title: title, image: image, content: content, date: Date())
         modelContext.insert(model)
         print("saving data: \(model.title)")
         

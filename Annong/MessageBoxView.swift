@@ -7,8 +7,9 @@ struct MessageBoxView: View {
     @State private var isShownFullScreenCover = false
     
     @Query private var posts: [Post]
-    
+      
     var body: some View {
+    
         VStack(alignment: .leading, spacing: 0) {
             Text("💎 \(myNickname)의 우편함")
                 .font(.title)
@@ -17,7 +18,7 @@ struct MessageBoxView: View {
                 .padding(.leading)
             
             List {
-                ForEach(posts) { post in
+                ForEach(posts.sorted(by: { $0.date > $1.date })) { post in
                     NavigationLink(destination: MessageView(post: post)) {
                         Text(post.title)
                     }

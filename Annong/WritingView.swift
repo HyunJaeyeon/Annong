@@ -92,14 +92,6 @@ struct WritingView: View {
             }
             .padding()
             .toolbar {
-                ToolbarItem(placement: .navigationBarLeading) {
-                    Button(action: {
-                        isShownFullScreenCover.toggle()
-                    }) {
-                        Text("취소")
-                    }
-                }
-                
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button(action: {
                         savePost()

@@ -9,70 +9,47 @@
 import SwiftUI
 
 struct MessageView: View {
-    @Binding var title: String
-    @State var selectedImage: Image? = Image("")
-    @Binding var content: String
+    
+    let post: Post
     
     var body: some View {
-        ZStack {
-            VStack(alignment: .leading) {
-                // 제목 입력 부분
-                Text("제목")
-                    .font(.headline)
-                    .foregroundStyle(.accent)
-                
-                Text(title)
-                    .padding()
-                    .background(Color.textBackground)
-                    .cornerRadius(10)
-                
-                
-                // 사진 추가 버튼 부분
-                Text("사진")
-                    .font(.headline)
-                    .foregroundStyle(.accent)
-                    .padding(.top, 26)
-                
-                HStack {
-                    if let selectedImage = selectedImage {
-                        selectedImage
-                            .resizable()
-                            .scaledToFit()
-                            .frame(height: 100)
-                            .cornerRadius(10)
-                            .padding(.leading, 10)
-                    }
-                }
-                
-                // 내용 입력 부분
-                Text("내용")
-                    .font(.headline)
-                    .foregroundStyle(.accent)
-                    .padding(.top, 26)
-                
-                TextEditor(text: $content)
-                    .overlay(alignment: .topLeading) {
-                        Text("내용을 입력해주세요")
-                            .foregroundStyle(content.isEmpty ? Color.placeholder : .clear)
-                            .font(.body)
-                    }
-                    .padding()
-                    .disabled(true)
-                    .contentMargins(.horizontal, -5)
-                    .contentMargins(.top, -10)
-                    .scrollContentBackground(.hidden)
-                    .background(Color.textBackground)
-                    .cornerRadius(10)
+        
+        VStack(alignment: .leading) {
+            // 제목 입력 부분
+            Text("제목")
+                .font(.headline)
+                .foregroundStyle(.accent)
+            
+            Text(post.title)
+                .padding()
+                .background(Color.textBackground)
+                .cornerRadius(10)
+            
+            // 사진 추가 버튼 부분
+            Text("사진")
+                .font(.headline)
+                .foregroundStyle(.accent)
+                .padding(.top, 26)
+            
+            if let imageData = post.image, let uiImage = UIImage(data: imageData) {
+                Image(uiImage: uiImage)
+                    .resizable()
+                    .scaledToFit()
                     .frame(height: 200)
-                
-                Spacer()
+                    .cornerRadius(10)
             }
-            .padding()
-        }.background(Color.background)
+            
+            // 내용 입력 부분
+            Text("내용")
+                .font(.headline)
+                .foregroundStyle(.accent)
+                .padding(.top, 26)
+            
+            Text(post.content)
+                .font(.body)
+            
+            Spacer()
+        }
     }
 }
 
-
-#Preview {
-    MessageView(title: .constant("나 스티브 잡슨데, 이 앱 좋다"), content: .constant("그러게"))
-}

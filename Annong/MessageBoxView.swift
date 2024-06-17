@@ -6,6 +6,8 @@ struct MessageBoxView: View {
     @Binding var myNickname: String
     @State private var isShownFullScreenCover = false
     
+    @Query private var posts: [Post]
+    
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
             Text("💎 \(myNickname)의 우편함")
@@ -15,8 +17,11 @@ struct MessageBoxView: View {
                 .padding(.leading)
             
             List {
-                Text("나 스티브잡스인데, 이 앱 좋다")
-                Text("나 조너선 아이브인데, 이 앱 이쁘다")
+                ForEach(posts) { post in
+                    NavigationLink(destination: MessageView(post: post)) {
+                        Text(post.title)
+                    }
+                }
             }
         }
         .padding(.top)
@@ -33,13 +38,8 @@ struct MessageBoxView: View {
         .background(.accent)
         .clipShape(.capsule)
         .fullScreenCover(isPresented: $isShownFullScreenCover) {
-            WritingView()
+            WritingView(isShownFullScreenCover: $isShownFullScreenCover)
         }
         .padding(.bottom)
     }
-}
-
-#Preview {
-    MessageBoxView(myNickname: .constant("젠예"))
-        .preferredColorScheme(.dark)
 }

@@ -6,17 +6,22 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct WritingView: View {
+    @Environment(\.modelContext) var modelContext
     
-    @State var title: String = ""
-    @State var content: String = ""
-    @State var selectedImage: Image? = nil
-    @State var isImagePickerPresented = false
+    @State private var title: String = ""
+    @State private var content: String = ""
+    @State private var selectedImage: Data? = nil
+    
+    @State private var isImagePickerPresented = false
+    
+    @Binding var isShownFullScreenCover: Bool
     
     var body: some View {
         
-        ZStack {
+        NavigationStack {
             VStack(alignment: .leading) {
                 // 제목 입력 부분
                 Text("제목")
@@ -52,8 +57,8 @@ struct WritingView: View {
                         ImagePicker(selectedImage: $selectedImage)
                     }
                     
-                    if let selectedImage = selectedImage {
-                        selectedImage
+                    if let imageData = selectedImage, let uiImage = UIImage(data: imageData) {
+                        Image(uiImage: uiImage)
                             .resizable()
                             .scaledToFit()
                             .frame(height: 100)
@@ -86,46 +91,81 @@ struct WritingView: View {
                 Spacer()
             }
             .padding()
-        }.background(Color.background)
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button(action: {
+                        isShownFullScreenCover.toggle()
+                    }) {
+                        Text("취소")
+                    }
+                }
+                
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button(action: {
+                        savePost()
+                        
+                        isShownFullScreenCover.toggle()
+                    }) {
+                        Text("완료")
+                    }
+                }
+            }
+        }
+    }
+    
+    //MARK: Post를 SwiftData에 저장하는 함수
+    func savePost() {
+        guard let image = selectedImage else {
+            print("No image selected")
+            return
+        }
+        
+        let model = Post(title: title, image: image, content: content)
+        modelContext.insert(model)
+        print("saving data: \(model.title)")
+        
+        do {
+            try modelContext.save()
+        } catch {
+            print("error saving data: \(error.localizedDescription)")
+        }
     }
 }
 
+
 // 이미지 피커
 struct ImagePicker: UIViewControllerRepresentable {
-    // 이미지 변수명: selectedImage, 데이터 타입 Image
-    @Binding var selectedImage: Image?
-    @Environment(\.presentationMode) private var presentationMode
+    @Binding var selectedImage: Data?
     
-    class Coordinator: NSObject, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
-        let parent: ImagePicker
-        
-        init(parent: ImagePicker) {
-            self.parent = parent
-        }
-        
-        func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-            if let uiImage = info[.originalImage] as? UIImage {
-                parent.selectedImage = Image(uiImage: uiImage)
-            }
-            
-            parent.presentationMode.wrappedValue.dismiss()
-        }
-    }
-    
-    func makeCoordinator() -> Coordinator {
-        Coordinator(parent: self)
-    }
-    
-    func makeUIViewController(context: UIViewControllerRepresentableContext<ImagePicker>) -> UIImagePickerController {
+    func makeUIViewController(context: Context) -> UIImagePickerController {
         let picker = UIImagePickerController()
         picker.delegate = context.coordinator
         return picker
     }
     
-    func updateUIViewController(_ uiViewController: UIImagePickerController, context: UIViewControllerRepresentableContext<ImagePicker>) {}
+    func updateUIViewController(_ uiViewController: UIImagePickerController, context: Context) {}
+    
+    func makeCoordinator() -> Coordinator {
+        Coordinator(self)
+    }
+    
+    class Coordinator: NSObject, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+        var parent: ImagePicker
+        
+        init(_ parent: ImagePicker) {
+            self.parent = parent
+        }
+        
+        func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+            if let image = info[.originalImage] as? UIImage {
+                parent.selectedImage = image.jpegData(compressionQuality: 1.0)
+            }
+            picker.dismiss(animated: true)
+        }
+    }
 }
 
-
 #Preview {
-    WritingView()
+    WritingView(isShownFullScreenCover: .constant(true))
+        .preferredColorScheme(.dark)
 }

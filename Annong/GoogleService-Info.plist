@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>API_KEY</key>
+	<string>AIzaSyBn0TQXVbNm-n2s3OmuCPDFmJITjCOtcwQ</string>
+	<key>GCM_SENDER_ID</key>
+	<string>487408245695</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.JenDia.RealAnnong</string>
+	<key>PROJECT_ID</key>
+	<string>annong-fc638</string>
+	<key>STORAGE_BUCKET</key>
+	<string>annong-fc638.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:487408245695:ios:ae7cc9b5d836bfa5da5f0a</string>
+</dict>
+</plist>

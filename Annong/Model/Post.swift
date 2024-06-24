@@ -1,5 +1,5 @@
 import Foundation
-import FirebaseFirestoreSwift
+import FirebaseFirestore
 
 // 글(Post) 모델 정의
 struct Post: Identifiable, Codable {

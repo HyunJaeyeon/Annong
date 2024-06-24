@@ -1,5 +1,5 @@
 import Foundation
-import FirebaseFirestoreSwift
+import FirebaseFirestore
 
 // 사용자(User) 모델 정의
 struct User: Identifiable, Codable {

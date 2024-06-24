@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import SwiftData
 import FirebaseCore
 
 class AppDelegate: NSObject, UIApplicationDelegate {
@@ -22,27 +21,10 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 struct AnnongApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     
-    var modelContainer: ModelContainer = {
-        let schema = Schema([User.self, Post.self])
-        let modelConfiguration = ModelConfiguration(schema: schema,
-                                                    isStoredInMemoryOnly: false)
-        
-        do {
-            return try ModelContainer(for: schema,
-                                      configurations: [modelConfiguration])
-        } catch {
-            fatalError("modelContainer가 생성되지 않았습니다: \(error)")
-        }
-    }()
-    
     var body: some Scene {
         WindowGroup {
             OnboardingView()
-                .modelContainer(modelContainer)
                 .preferredColorScheme(.dark)
         }
     }
-    init(){
-           print(URL.applicationSupportDirectory.path(percentEncoded: false))
-       }
 }

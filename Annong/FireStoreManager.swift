@@ -1,4 +1,5 @@
 import SwiftUI
+import FirebaseFirestore
 
 @Observable
 class FireStoreManager {

@@ -94,32 +94,13 @@ struct WritingView: View {
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button(action: {
-                        savePost()
-                        
+                        // 글 저장 코드
                         isShownFullScreenCover.toggle()
                     }) {
                         Text("완료")
                     }
                 }
             }
-        }
-    }
-    
-    //MARK: Post를 SwiftData에 저장하는 함수
-    func savePost() {
-        guard let image = selectedImage else {
-            print("No image selected")
-            return
-        }
-        
-        let model = Post(title: title, image: image, content: content, date: Date())
-        modelContext.insert(model)
-        print("saving data: \(model.title)")
-        
-        do {
-            try modelContext.save()
-        } catch {
-            print("error saving data: \(error.localizedDescription)")
         }
     }
 }

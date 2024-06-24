@@ -7,7 +7,7 @@ struct MessageBoxView: View {
     @State private var isShownFullScreenCover = false
     
     @Query private var posts: [Post]
-      
+
     var body: some View {
         NavigationStack{
             VStack(alignment: .leading, spacing: 0) {
@@ -17,13 +17,13 @@ struct MessageBoxView: View {
                     .foregroundStyle(.white)
                     .padding(.leading)
                 
-                List {
-                    ForEach(posts.sorted(by: { $0.date > $1.date })) { post in
-                        NavigationLink(destination: MessageView(post: post)) {
-                            Text(post.title)
-                        }
-                    }
-                }
+//                List {
+//                    ForEach(posts.sorted(by: { $0.date > $1.date })) { post in
+//                        NavigationLink(destination: MessageView(post: post)) {
+//                            Text(post.title)
+//                        }
+//                    }
+//                }
             }
             .padding(.top)
             

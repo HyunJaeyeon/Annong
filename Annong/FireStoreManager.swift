@@ -1,8 +1,10 @@
-//
-//  FireStoreManager.swift
-//  Annong
-//
-//  Created by Hyun Jaeyeon on 6/24/24.
-//
+import SwiftUI
 
-import Foundation
+@Observable
+class FireStoreManager {
+    var users : [User] = []
+    var posts : [Post] = []
+     
+    let database = Firestore.firestore()
+
+}

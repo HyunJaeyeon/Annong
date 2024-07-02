@@ -13,10 +13,7 @@
 		6EEAFAF32C296411007E5DA6 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 6EEAFAF22C296411007E5DA6 /* FirebaseFirestoreSwift */; };
 		6EEAFAF52C296855007E5DA6 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 6EEAFAF42C296855007E5DA6 /* FirebaseAnalytics */; };
 		BD4B0E8D2C294D41009D07BA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BD4B0E8C2C294D41009D07BA /* GoogleService-Info.plist */; };
-<<<<<<< HEAD
 		BD4B0E902C294E68009D07BA /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = BD4B0E8F2C294E68009D07BA /* FirebaseAnalytics */; };
-=======
->>>>>>> origin/main
 		BD4B0E982C294E68009D07BA /* FirebaseAppCheck in Frameworks */ = {isa = PBXBuildFile; productRef = BD4B0E972C294E68009D07BA /* FirebaseAppCheck */; };
 		BD4B0E9A2C2951AC009D07BA /* FireStoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4B0E992C2951AC009D07BA /* FireStoreManager.swift */; };
 		BD4B0EA02C297E69009D07BA /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = BD4B0E9F2C297E69009D07BA /* FirebaseFirestore */; };
@@ -58,29 +55,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-<<<<<<< HEAD
-				BD4B0E902C294E68009D07BA /* FirebaseAnalytics in Frameworks */,
-				BD4B0E982C294E68009D07BA /* FirebaseAppCheck in Frameworks */,
-				BD4B0EA02C297E69009D07BA /* FirebaseFirestore in Frameworks */,
-				BD4B0EA22C298C6A009D07BA /* FirebaseAuth in Frameworks */,
-=======
 				BD4B0E982C294E68009D07BA /* FirebaseAppCheck in Frameworks */,
 				6EEAFAF12C29636D007E5DA6 /* FirebaseStorage in Frameworks */,
 				6EEAFAEF2C2962DB007E5DA6 /* FirebaseFirestore in Frameworks */,
 				6EEAFAF52C296855007E5DA6 /* FirebaseAnalytics in Frameworks */,
 				6EEAFAF32C296411007E5DA6 /* FirebaseFirestoreSwift in Frameworks */,
->>>>>>> origin/main
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-<<<<<<< HEAD
-		BD4B0E9E2C297E69009D07BA /* Frameworks */ = {
-=======
 		6EEAFAED2C2962DB007E5DA6 /* Frameworks */ = {
->>>>>>> origin/main
 			isa = PBXGroup;
 			children = (
 			);
@@ -93,11 +79,7 @@
 				BD562F4B2C1B0A4F0078738B /* .gitignore */,
 				BD562F3C2C1B0A3A0078738B /* Annong */,
 				BD562F3B2C1B0A3A0078738B /* Products */,
-<<<<<<< HEAD
-				BD4B0E9E2C297E69009D07BA /* Frameworks */,
-=======
 				6EEAFAED2C2962DB007E5DA6 /* Frameworks */,
->>>>>>> origin/main
 			);
 			sourceTree = "<group>";
 		};
@@ -163,18 +145,11 @@
 			);
 			name = Annong;
 			packageProductDependencies = (
-<<<<<<< HEAD
-				BD4B0E8F2C294E68009D07BA /* FirebaseAnalytics */,
-				BD4B0E972C294E68009D07BA /* FirebaseAppCheck */,
-				BD4B0E9F2C297E69009D07BA /* FirebaseFirestore */,
-				BD4B0EA12C298C6A009D07BA /* FirebaseAuth */,
-=======
 				BD4B0E972C294E68009D07BA /* FirebaseAppCheck */,
 				6EEAFAEE2C2962DB007E5DA6 /* FirebaseFirestore */,
 				6EEAFAF02C29636D007E5DA6 /* FirebaseStorage */,
 				6EEAFAF22C296411007E5DA6 /* FirebaseFirestoreSwift */,
 				6EEAFAF42C296855007E5DA6 /* FirebaseAnalytics */,
->>>>>>> origin/main
 			);
 			productName = Annong;
 			productReference = BD562F3A2C1B0A3A0078738B /* Annong.app */;

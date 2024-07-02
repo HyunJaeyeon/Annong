@@ -94,11 +94,8 @@ struct WritingView: View {
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button(action: {
-<<<<<<< HEAD
-                        // 글 저장 코드
-=======
+
                         savePost()
->>>>>>> origin/main
                         isShownFullScreenCover.toggle()
                     }) {
                         Text("완료")
@@ -107,8 +104,7 @@ struct WritingView: View {
             }
         }
     }
-<<<<<<< HEAD
-=======
+
     
     private func savePost() {
             let date = Date()
@@ -122,7 +118,6 @@ struct WritingView: View {
                 }
             }
         }
->>>>>>> origin/main
 }
 
 

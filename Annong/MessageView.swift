@@ -30,19 +30,11 @@ struct MessageView: View {
                     .foregroundStyle(.accent)
                     .padding(.top, 26)
                 
-<<<<<<< HEAD
-//                Image(uiImage: uiImage)
-//                    .resizable()
-//                    .scaledToFit()
-//                    .frame(height: 200)
-//                    .cornerRadius(10)
-=======
                 Image("")
                     .resizable()
                     .scaledToFit()
                     .frame(height: 200)
                     .cornerRadius(10)
->>>>>>> origin/main
                 
                 // 내용 입력 부분
                 Text("내용")

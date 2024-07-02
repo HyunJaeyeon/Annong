@@ -4,21 +4,22 @@
 //
 //  Created by 이예형 on 6/13/24.
 //
-
 import SwiftUI
-import SwiftData
+import FirebaseFirestore
 
 struct WritingView: View {
-    @Environment(\.modelContext) var modelContext
     
     @State private var title: String = ""
     @State private var content: String = ""
     @State private var selectedImage: Data? = nil
-    
+    @State var recipientUid: String
     @State private var isImagePickerPresented = false
+    @State var authorUid: String
+    
+    @ObservedObject var firestoreManager: FireStoreManager
     
     @Binding var isShownFullScreenCover: Bool
-    
+
     var body: some View {
         
         NavigationStack {
@@ -33,7 +34,6 @@ struct WritingView: View {
                     .padding()
                     .background(Color.textBackground)
                     .cornerRadius(10)
-                
                 
                 // 사진 추가 버튼 부분
                 Text("사진")
@@ -95,7 +95,6 @@ struct WritingView: View {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button(action: {
                         savePost()
-                        
                         isShownFullScreenCover.toggle()
                     }) {
                         Text("완료")
@@ -105,23 +104,18 @@ struct WritingView: View {
         }
     }
     
-    //MARK: Post를 SwiftData에 저장하는 함수
-    func savePost() {
-        guard let image = selectedImage else {
-            print("No image selected")
-            return
+    private func savePost() {
+            let date = Date()
+            let newPost = Post(id: nil, title: self.title, content: self.content, authorUid: self.authorUid, recipientUid: self.recipientUid, date: date)
+            
+            firestoreManager.addPost(newPost, recipientUid: self.recipientUid) { success in
+                if success {
+                    print("Post successfully saved!")
+                } else {
+                    print("Failed to save post.")
+                }
+            }
         }
-        
-        let model = Post(title: title, image: image, content: content, date: Date())
-        modelContext.insert(model)
-        print("saving data: \(model.title)")
-        
-        do {
-            try modelContext.save()
-        } catch {
-            print("error saving data: \(error.localizedDescription)")
-        }
-    }
 }
 
 
@@ -155,9 +149,4 @@ struct ImagePicker: UIViewControllerRepresentable {
             picker.dismiss(animated: true)
         }
     }
-}
-
-#Preview {
-    WritingView(isShownFullScreenCover: .constant(true))
-        .preferredColorScheme(.dark)
 }

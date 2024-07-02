@@ -1,13 +1,12 @@
 import SwiftUI
-import SwiftData
+import FirebaseFirestore
 
 struct MessageBoxView: View {
-    
+    @ObservedObject var firestoreManager: FireStoreManager
     @Binding var myNickname: String
+    @Binding var myUid: String  // Firebase UID for the current user
     @State private var isShownFullScreenCover = false
     
-    @Query private var posts: [Post]
-      
     var body: some View {
         NavigationStack{
             VStack(alignment: .leading, spacing: 0) {
@@ -17,13 +16,27 @@ struct MessageBoxView: View {
                     .foregroundStyle(.white)
                     .padding(.leading)
                 
+                // Fetch posts on appear
+                .onAppear {
+                    firestoreManager.fetchReceivedPosts(forUserUid: myUid)
+                }
+                
+                // List for displaying posts
                 List {
-                    ForEach(posts.sorted(by: { $0.date > $1.date })) { post in
+                    ForEach(firestoreManager.posts.sorted(by: { $0.date > $1.date })) { post in
                         NavigationLink(destination: MessageView(post: post)) {
-                            Text(post.title)
+                            VStack(alignment: .leading) {
+                                Text(post.title)
+                                    .font(.headline)
+                                Text(post.date, style: .date)
+                                    .font(.subheadline)
+                                    .foregroundColor(.secondary)
+                            }
                         }
                     }
                 }
+                .listStyle(InsetGroupedListStyle())
+                
             }
             .padding(.top)
             
@@ -39,9 +52,10 @@ struct MessageBoxView: View {
             .background(.accent)
             .clipShape(.capsule)
             .fullScreenCover(isPresented: $isShownFullScreenCover) {
-                WritingView(isShownFullScreenCover: $isShownFullScreenCover)
+                NicknameCheckView(isShownFullScreenCover: $isShownFullScreenCover, firestoreManager: firestoreManager)
             }
             .padding(.bottom)
         }
     }
 }
+

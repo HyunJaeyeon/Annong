@@ -30,7 +30,7 @@ struct MessageView: View {
                     .foregroundStyle(.accent)
                     .padding(.top, 26)
                 
-                Image(uiImage: uiImage)
+                Image("")
                     .resizable()
                     .scaledToFit()
                     .frame(height: 200)

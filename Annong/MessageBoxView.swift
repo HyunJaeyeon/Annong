@@ -6,11 +6,7 @@ struct MessageBoxView: View {
     @Binding var myNickname: String
     @Binding var myUid: String  // Firebase UID for the current user
     @State private var isShownFullScreenCover = false
-<<<<<<< HEAD
-
-=======
     
->>>>>>> origin/main
     var body: some View {
         NavigationStack{
             VStack(alignment: .leading, spacing: 0) {
@@ -20,15 +16,6 @@ struct MessageBoxView: View {
                     .foregroundStyle(.white)
                     .padding(.leading)
                 
-<<<<<<< HEAD
-//                List {
-//                    ForEach(posts.sorted(by: { $0.date > $1.date })) { post in
-//                        NavigationLink(destination: MessageView(post: post)) {
-//                            Text(post.title)
-//                        }
-//                    }
-//                }
-=======
                 // Fetch posts on appear
                 .onAppear {
                     firestoreManager.fetchReceivedPosts(forUserUid: myUid)
@@ -50,7 +37,6 @@ struct MessageBoxView: View {
                 }
                 .listStyle(InsetGroupedListStyle())
                 
->>>>>>> origin/main
             }
             .padding(.top)
             

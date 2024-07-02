@@ -1,12 +1,8 @@
-<<<<<<< HEAD
 import SwiftUI
-import FirebaseFirestore
-=======
 import Foundation
 import FirebaseFirestore
 import FirebaseFirestoreSwift
 import Combine
->>>>>>> origin/main
 
 
 // Post 데이터 저장 프로토콜 정의

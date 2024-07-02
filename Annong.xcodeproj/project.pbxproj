@@ -13,11 +13,8 @@
 		6EEAFAF32C296411007E5DA6 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 6EEAFAF22C296411007E5DA6 /* FirebaseFirestoreSwift */; };
 		6EEAFAF52C296855007E5DA6 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 6EEAFAF42C296855007E5DA6 /* FirebaseAnalytics */; };
 		BD4B0E8D2C294D41009D07BA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BD4B0E8C2C294D41009D07BA /* GoogleService-Info.plist */; };
-		BD4B0E902C294E68009D07BA /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = BD4B0E8F2C294E68009D07BA /* FirebaseAnalytics */; };
 		BD4B0E982C294E68009D07BA /* FirebaseAppCheck in Frameworks */ = {isa = PBXBuildFile; productRef = BD4B0E972C294E68009D07BA /* FirebaseAppCheck */; };
 		BD4B0E9A2C2951AC009D07BA /* FireStoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4B0E992C2951AC009D07BA /* FireStoreManager.swift */; };
-		BD4B0EA02C297E69009D07BA /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = BD4B0E9F2C297E69009D07BA /* FirebaseFirestore */; };
-		BD4B0EA22C298C6A009D07BA /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = BD4B0EA12C298C6A009D07BA /* FirebaseAuth */; };
 		BD562F3E2C1B0A3A0078738B /* AnnongApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD562F3D2C1B0A3A0078738B /* AnnongApp.swift */; };
 		BD562F422C1B0A3B0078738B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD562F412C1B0A3B0078738B /* Assets.xcassets */; };
 		BD562F452C1B0A3B0078738B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD562F442C1B0A3B0078738B /* Preview Assets.xcassets */; };
@@ -29,6 +26,7 @@
 		BD562F572C1BC83D0078738B /* MessageBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD562F562C1BC83D0078738B /* MessageBoxView.swift */; };
 		BD562F592C1BC84B0078738B /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD562F582C1BC84B0078738B /* OnboardingView.swift */; };
 		BDA649E82C317D62005CA209 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA649E72C317D62005CA209 /* LoginViewModel.swift */; };
+		BDA649EA2C33FB78005CA209 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = BDA649E92C33FB78005CA209 /* FirebaseAuth */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +54,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BD4B0E982C294E68009D07BA /* FirebaseAppCheck in Frameworks */,
+				BDA649EA2C33FB78005CA209 /* FirebaseAuth in Frameworks */,
 				6EEAFAF12C29636D007E5DA6 /* FirebaseStorage in Frameworks */,
 				6EEAFAEF2C2962DB007E5DA6 /* FirebaseFirestore in Frameworks */,
 				6EEAFAF52C296855007E5DA6 /* FirebaseAnalytics in Frameworks */,
@@ -150,6 +149,7 @@
 				6EEAFAF02C29636D007E5DA6 /* FirebaseStorage */,
 				6EEAFAF22C296411007E5DA6 /* FirebaseFirestoreSwift */,
 				6EEAFAF42C296855007E5DA6 /* FirebaseAnalytics */,
+				BDA649E92C33FB78005CA209 /* FirebaseAuth */,
 			);
 			productName = Annong;
 			productReference = BD562F3A2C1B0A3A0078738B /* Annong.app */;
@@ -467,12 +467,7 @@
 			package = BD4B0E8E2C294E68009D07BA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseAppCheck;
 		};
-		BD4B0E9F2C297E69009D07BA /* FirebaseFirestore */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = BD4B0E8E2C294E68009D07BA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseFirestore;
-		};
-		BD4B0EA12C298C6A009D07BA /* FirebaseAuth */ = {
+		BDA649E92C33FB78005CA209 /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = BD4B0E8E2C294E68009D07BA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseAuth;

@@ -21,7 +21,7 @@ struct OnboardingView: View {
 //    init() {
 //        checkAppleIDCredentialState()
 //    }
-    @State var uid = UUID().uuidString
+    @State var userID = ""
     @State var nickname = ""
     @State private var isNavigate = false
     @StateObject var firestoreManager = FireStoreManager()
@@ -55,6 +55,14 @@ struct OnboardingView: View {
             .clipShape(Capsule())
             .padding(.top, 80)
 
+//            NavigationLink(destination:
+//                            MessageBoxView(firestoreManager: firestoreManager, myNickname: $nickname, myUid: $uid)
+//                           
+//                           
+//                .navigationBarHidden(true),
+//                           isActive: $isNavigate) {
+//                EmptyView()
+//            }
             
             //MARK: - SignWithApple
             SignInWithAppleButton(.signIn) { request in
@@ -87,7 +95,11 @@ struct OnboardingView: View {
             .signInWithAppleButtonStyle(.white)
             .frame(height: 45)
             .padding()
+            
+           
         }
+        
+        
     }
     
     private func checkAppleIDCredentialState(userID: String) {
@@ -108,7 +120,7 @@ struct OnboardingView: View {
                         // authorized된 상태이므로 바로 로그인 완료 화면으로 이동
                         if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene {
                             if let window = windowScene.windows.first {
-                                window.rootViewController = UIHostingController(rootView: MessageBoxView(myNickname: $userName).preferredColorScheme(.dark))
+                                window.rootViewController = UIHostingController(rootView: MessageBoxView(firestoreManager: firestoreManager, myNickname: $userName, myUid: $userID).preferredColorScheme(.dark))
                                 window.makeKeyAndVisible()
                             }
                         }
@@ -123,33 +135,26 @@ struct OnboardingView: View {
                 }
             }
         }
-            .disabled(isNavigate) // 네비게이션 활성화 상태일 때 버튼 비활성화
-            
-            NavigationLink(destination:
-                            MessageBoxView(firestoreManager: firestoreManager, myNickname: $nickname, myUid: $uid)
-                           
-                           
-                .navigationBarHidden(true),
-                           isActive: $isNavigate) {
-                EmptyView()
-            }
-        }
-    }
-    
-    
     
     private func saveUser() {
         // 고유 식별자 생성
        
         
         // Firestore의 DocumentReference 객체를 생성하지 않고 빈 배열로 초기화
-        let newUser = User(id: nil, nickname: nickname, uid: uid, receivedPosts: [])
+        let newUser = User(id: nil, nickname: nickname, uid: userID, receivedPosts: [])
         
         // Firestore에 유저 추가
         firestoreManager.addUser(newUser)
         self.isNavigate = true
     }
+//            .disabled(isNavigate) // 네비게이션 활성화 상태일 때 버튼 비활성화
 }
+
+    
+    
+    
+
+
 
 
 

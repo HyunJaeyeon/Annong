@@ -5,8 +5,6 @@ struct MessageBoxView: View {
     
     @Binding var myNickname: String
     @State private var isShownFullScreenCover = false
-    
-    @Query private var posts: [Post]
 
     var body: some View {
         NavigationStack{

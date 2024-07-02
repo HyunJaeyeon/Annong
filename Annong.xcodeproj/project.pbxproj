@@ -13,6 +13,7 @@
 		BD4B0E982C294E68009D07BA /* FirebaseAppCheck in Frameworks */ = {isa = PBXBuildFile; productRef = BD4B0E972C294E68009D07BA /* FirebaseAppCheck */; };
 		BD4B0E9A2C2951AC009D07BA /* FireStoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4B0E992C2951AC009D07BA /* FireStoreManager.swift */; };
 		BD4B0EA02C297E69009D07BA /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = BD4B0E9F2C297E69009D07BA /* FirebaseFirestore */; };
+		BD4B0EA22C298C6A009D07BA /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = BD4B0EA12C298C6A009D07BA /* FirebaseAuth */; };
 		BD562F3E2C1B0A3A0078738B /* AnnongApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD562F3D2C1B0A3A0078738B /* AnnongApp.swift */; };
 		BD562F422C1B0A3B0078738B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD562F412C1B0A3B0078738B /* Assets.xcassets */; };
 		BD562F452C1B0A3B0078738B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD562F442C1B0A3B0078738B /* Preview Assets.xcassets */; };
@@ -23,6 +24,7 @@
 		BD562F552C1BC82C0078738B /* NicknameCheckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD562F542C1BC82C0078738B /* NicknameCheckView.swift */; };
 		BD562F572C1BC83D0078738B /* MessageBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD562F562C1BC83D0078738B /* MessageBoxView.swift */; };
 		BD562F592C1BC84B0078738B /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD562F582C1BC84B0078738B /* OnboardingView.swift */; };
+		BDA649E82C317D62005CA209 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA649E72C317D62005CA209 /* LoginViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +43,7 @@
 		BD562F542C1BC82C0078738B /* NicknameCheckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NicknameCheckView.swift; sourceTree = "<group>"; };
 		BD562F562C1BC83D0078738B /* MessageBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageBoxView.swift; sourceTree = "<group>"; };
 		BD562F582C1BC84B0078738B /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		BDA649E72C317D62005CA209 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +54,7 @@
 				BD4B0E902C294E68009D07BA /* FirebaseAnalytics in Frameworks */,
 				BD4B0E982C294E68009D07BA /* FirebaseAppCheck in Frameworks */,
 				BD4B0EA02C297E69009D07BA /* FirebaseFirestore in Frameworks */,
+				BD4B0EA22C298C6A009D07BA /* FirebaseAuth in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,8 +92,8 @@
 				BD4B0E8C2C294D41009D07BA /* GoogleService-Info.plist */,
 				6E779AC62C2123560025B942 /* Annong.entitlements */,
 				BD562F3D2C1B0A3A0078738B /* AnnongApp.swift */,
-				BD562F562C1BC83D0078738B /* MessageBoxView.swift */,
 				BD562F582C1BC84B0078738B /* OnboardingView.swift */,
+				BD562F562C1BC83D0078738B /* MessageBoxView.swift */,
 				BD562F542C1BC82C0078738B /* NicknameCheckView.swift */,
 				BD562F522C1BC7B50078738B /* MessageView.swift */,
 				6E542CB02C1B2AE400F1FB30 /* WritingView.swift */,
@@ -97,6 +101,7 @@
 				BD562F4F2C1B0CD20078738B /* Model */,
 				BD562F432C1B0A3B0078738B /* Preview Content */,
 				BD4B0E992C2951AC009D07BA /* FireStoreManager.swift */,
+				BDA649E72C317D62005CA209 /* LoginViewModel.swift */,
 			);
 			path = Annong;
 			sourceTree = "<group>";
@@ -138,6 +143,7 @@
 				BD4B0E8F2C294E68009D07BA /* FirebaseAnalytics */,
 				BD4B0E972C294E68009D07BA /* FirebaseAppCheck */,
 				BD4B0E9F2C297E69009D07BA /* FirebaseFirestore */,
+				BD4B0EA12C298C6A009D07BA /* FirebaseAuth */,
 			);
 			productName = Annong;
 			productReference = BD562F3A2C1B0A3A0078738B /* Annong.app */;
@@ -205,6 +211,7 @@
 				BD562F592C1BC84B0078738B /* OnboardingView.swift in Sources */,
 				BD562F3E2C1B0A3A0078738B /* AnnongApp.swift in Sources */,
 				BD562F4E2C1B0CCD0078738B /* User.swift in Sources */,
+				BDA649E82C317D62005CA209 /* LoginViewModel.swift in Sources */,
 				6E542CB12C1B2AE400F1FB30 /* WritingView.swift in Sources */,
 				BD562F512C1B14410078738B /* Post.swift in Sources */,
 			);
@@ -338,10 +345,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Annong/Annong.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Annong/Preview Content\"";
-				DEVELOPMENT_TEAM = PK4L7H6D6F;
+				DEVELOPMENT_TEAM = 4QG3GC35LA;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -368,10 +376,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Annong/Annong.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Annong/Preview Content\"";
-				DEVELOPMENT_TEAM = PK4L7H6D6F;
+				DEVELOPMENT_TEAM = 4QG3GC35LA;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -441,6 +450,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = BD4B0E8E2C294E68009D07BA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseFirestore;
+		};
+		BD4B0EA12C298C6A009D07BA /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BD4B0E8E2C294E68009D07BA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

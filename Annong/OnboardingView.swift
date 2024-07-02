@@ -10,9 +10,9 @@ import FirebaseFirestore
 
 struct OnboardingView: View {
     @State var uid = UUID().uuidString
-    @State var nickname = ""
+    @State private var nickname = ""
     @State private var isNavigate = false
-    @StateObject var firestoreManager = FireStoreManager()
+    private var firestoreManager = FireStoreManager()
     
     var body: some View {
         NavigationStack{

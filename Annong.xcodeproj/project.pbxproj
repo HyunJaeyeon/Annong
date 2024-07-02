@@ -26,6 +26,8 @@
 		BD562F572C1BC83D0078738B /* MessageBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD562F562C1BC83D0078738B /* MessageBoxView.swift */; };
 		BD562F592C1BC84B0078738B /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD562F582C1BC84B0078738B /* OnboardingView.swift */; };
 		BDA649EC2C3427B2005CA209 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA649EB2C3427B2005CA209 /* SignInView.swift */; };
+		BDA649EE2C342A74005CA209 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = BDA649ED2C342A74005CA209 /* FirebaseAuth */; };
+		BDA649F02C342DA6005CA209 /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA649EF2C342DA6005CA209 /* SignInViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +47,7 @@
 		BD562F562C1BC83D0078738B /* MessageBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageBoxView.swift; sourceTree = "<group>"; };
 		BD562F582C1BC84B0078738B /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		BDA649EB2C3427B2005CA209 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
+		BDA649EF2C342DA6005CA209 /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +56,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BD4B0E982C294E68009D07BA /* FirebaseAppCheck in Frameworks */,
+				BDA649EE2C342A74005CA209 /* FirebaseAuth in Frameworks */,
 				6EEAFAF12C29636D007E5DA6 /* FirebaseStorage in Frameworks */,
 				6EEAFAEF2C2962DB007E5DA6 /* FirebaseFirestore in Frameworks */,
 				6EEAFAF52C296855007E5DA6 /* FirebaseAnalytics in Frameworks */,
@@ -95,6 +99,7 @@
 				6E779AC62C2123560025B942 /* Annong.entitlements */,
 				BD562F4F2C1B0CD20078738B /* Model */,
 				BD562F3D2C1B0A3A0078738B /* AnnongApp.swift */,
+				BDA649EF2C342DA6005CA209 /* SignInViewModel.swift */,
 				BDA649EB2C3427B2005CA209 /* SignInView.swift */,
 				BD562F582C1BC84B0078738B /* OnboardingView.swift */,
 				BD562F562C1BC83D0078738B /* MessageBoxView.swift */,
@@ -147,6 +152,7 @@
 				6EEAFAF02C29636D007E5DA6 /* FirebaseStorage */,
 				6EEAFAF22C296411007E5DA6 /* FirebaseFirestoreSwift */,
 				6EEAFAF42C296855007E5DA6 /* FirebaseAnalytics */,
+				BDA649ED2C342A74005CA209 /* FirebaseAuth */,
 			);
 			productName = Annong;
 			productReference = BD562F3A2C1B0A3A0078738B /* Annong.app */;
@@ -215,6 +221,7 @@
 				BD562F592C1BC84B0078738B /* OnboardingView.swift in Sources */,
 				BD562F3E2C1B0A3A0078738B /* AnnongApp.swift in Sources */,
 				BD562F4E2C1B0CCD0078738B /* User.swift in Sources */,
+				BDA649F02C342DA6005CA209 /* SignInViewModel.swift in Sources */,
 				6E542CB12C1B2AE400F1FB30 /* WritingView.swift in Sources */,
 				BD562F512C1B14410078738B /* Post.swift in Sources */,
 			);
@@ -461,6 +468,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = BD4B0E8E2C294E68009D07BA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseAppCheck;
+		};
+		BDA649ED2C342A74005CA209 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BD4B0E8E2C294E68009D07BA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

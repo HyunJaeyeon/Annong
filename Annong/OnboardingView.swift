@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-<<<<<<< HEAD
 import Firebase
 import FirebaseFirestore
 import FirebaseAuth
@@ -22,15 +21,11 @@ struct OnboardingView: View {
 //    init() {
 //        checkAppleIDCredentialState()
 //    }
-=======
-import FirebaseFirestore
-
-struct OnboardingView: View {
     @State var uid = UUID().uuidString
     @State var nickname = ""
     @State private var isNavigate = false
     @StateObject var firestoreManager = FireStoreManager()
->>>>>>> origin/main
+
     
     var body: some View {
         NavigationStack{
@@ -47,16 +42,9 @@ struct OnboardingView: View {
 //                    .frame(width: 361)
             }
             
-<<<<<<< HEAD
-            NavigationLink {
-//                MessageBoxView(myNickname: $nickname)
-//                    .navigationBarHidden(true)
-            } label: {
-=======
             Button(action: {
                 saveUser()
             }) {
->>>>>>> origin/main
                 Text("안농 시작하기")
                     .fontWeight(.bold)
                     .foregroundColor(.black)
@@ -66,7 +54,7 @@ struct OnboardingView: View {
             .background(Color.accentColor)
             .clipShape(Capsule())
             .padding(.top, 80)
-<<<<<<< HEAD
+
             
             //MARK: - SignWithApple
             SignInWithAppleButton(.signIn) { request in
@@ -135,7 +123,6 @@ struct OnboardingView: View {
                 }
             }
         }
-=======
             .disabled(isNavigate) // 네비게이션 활성화 상태일 때 버튼 비활성화
             
             NavigationLink(destination:
@@ -162,7 +149,6 @@ struct OnboardingView: View {
         firestoreManager.addUser(newUser)
         self.isNavigate = true
     }
->>>>>>> origin/main
 }
 
 

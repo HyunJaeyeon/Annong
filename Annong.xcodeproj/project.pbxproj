@@ -25,6 +25,7 @@
 		BD562F552C1BC82C0078738B /* NicknameCheckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD562F542C1BC82C0078738B /* NicknameCheckView.swift */; };
 		BD562F572C1BC83D0078738B /* MessageBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD562F562C1BC83D0078738B /* MessageBoxView.swift */; };
 		BD562F592C1BC84B0078738B /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD562F582C1BC84B0078738B /* OnboardingView.swift */; };
+		BDA649EC2C3427B2005CA209 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA649EB2C3427B2005CA209 /* SignInView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,7 @@
 		BD562F542C1BC82C0078738B /* NicknameCheckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NicknameCheckView.swift; sourceTree = "<group>"; };
 		BD562F562C1BC83D0078738B /* MessageBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageBoxView.swift; sourceTree = "<group>"; };
 		BD562F582C1BC84B0078738B /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		BDA649EB2C3427B2005CA209 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,8 +95,9 @@
 				6E779AC62C2123560025B942 /* Annong.entitlements */,
 				BD562F4F2C1B0CD20078738B /* Model */,
 				BD562F3D2C1B0A3A0078738B /* AnnongApp.swift */,
-				BD562F562C1BC83D0078738B /* MessageBoxView.swift */,
+				BDA649EB2C3427B2005CA209 /* SignInView.swift */,
 				BD562F582C1BC84B0078738B /* OnboardingView.swift */,
+				BD562F562C1BC83D0078738B /* MessageBoxView.swift */,
 				BD562F542C1BC82C0078738B /* NicknameCheckView.swift */,
 				BD562F522C1BC7B50078738B /* MessageView.swift */,
 				6E542CB02C1B2AE400F1FB30 /* WritingView.swift */,
@@ -208,6 +211,7 @@
 				BD562F532C1BC7B50078738B /* MessageView.swift in Sources */,
 				BD562F552C1BC82C0078738B /* NicknameCheckView.swift in Sources */,
 				BD4B0E9A2C2951AC009D07BA /* FireStoreManager.swift in Sources */,
+				BDA649EC2C3427B2005CA209 /* SignInView.swift in Sources */,
 				BD562F592C1BC84B0078738B /* OnboardingView.swift in Sources */,
 				BD562F3E2C1B0A3A0078738B /* AnnongApp.swift in Sources */,
 				BD562F4E2C1B0CCD0078738B /* User.swift in Sources */,
